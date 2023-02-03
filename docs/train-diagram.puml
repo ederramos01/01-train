@@ -1,0 +1,42 @@
+@startuml
+
+    object train
+    object trainTracks {
+        length
+    }
+    object mainCar
+
+    object wagons {
+        anchoring()
+    }
+    object wheels {
+        material
+        roll()
+    }
+    object controls
+    object start
+    object brake
+    object move
+    object whistle
+    object player {
+        name
+        age
+        drive()
+    }
+
+    train *-- mainCar
+    
+    mainCar o-- wagons
+    mainCar <.. controls
+    
+    wagons *-- wheels
+    
+    train *-- trainTracks
+
+    controls o-left- player
+    controls <|-- start
+    controls <|-- brake
+    controls <|-- move
+    controls <|-- whistle
+
+@enduml
