@@ -1,42 +1,37 @@
-@startuml
+@startuml trainModel
 
     object train
-    object trainTracks {
-        length
-    }
+    object trainTracks
     object mainCar
 
-    object wagons {
-        anchoring()
-    }
-    object wheels {
-        material
-        roll()
-    }
-    object controls
-    object start
-    object brake
-    object move
+    object wagons
+    object control
+    object controlGoal
+    object stop
+    object advance
+    object goBack
     object whistle
-    object player {
-        name
-        age
-        drive()
-    }
+    object player
+    object playerGoal
+    object drive
 
     train *-- mainCar
     
     mainCar o-- wagons
-    mainCar <.. controls
-    
-    wagons *-- wheels
+    mainCar <.. control
     
     train *-- trainTracks
 
-    controls o-left- player
-    controls <|-- start
-    controls <|-- brake
-    controls <|-- move
-    controls <|-- whistle
+    player *-- playerGoal
+    drive -right-|> playerGoal
+
+    control o-left- player
+    control *-- controlGoal
+    controlGoal <|-- stop
+    controlGoal <|-- advance
+    controlGoal <|-- goBack
+    controlGoal <|-- whistle
+
+    
 
 @enduml
