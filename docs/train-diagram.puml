@@ -5,6 +5,8 @@
     object mainCar
 
     object wagons
+    object wagonsGoal
+    object addWagon
     object control
     object controlGoal
     object stop
@@ -21,6 +23,9 @@
     mainCar <.. control
     
     train *-- trainTracks
+
+    wagons *-- wagonsGoal
+    wagonsGoal --|> addWagon
 
     player *-- playerGoal
     drive -right-|> playerGoal
