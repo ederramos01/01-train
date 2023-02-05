@@ -1,9 +1,11 @@
 @startuml trainModel
 
+    object trainGame
     object train
     object trainTracks
-    object mainCar
-
+    object lineTracks
+    object addTracks
+    
     object wagons
     object wagonsGoal
     object addWagon
@@ -17,20 +19,23 @@
     object playerGoal
     object drive
 
-    train *-- mainCar
+    trainGame *-- train
+    trainGame *-- player
     
-    mainCar o-- wagons
-    mainCar <.. control
+    train o-- wagons
+    train <.. control
     
-    train *-- trainTracks
+    trainGame *-- trainTracks
+    addTracks -right-|> trainTracks
+    trainTracks *-- lineTracks
 
     wagons *-- wagonsGoal
-    wagonsGoal --|> addWagon
+    addWagon -left-|> wagonsGoal
 
     player *-- playerGoal
     drive -right-|> playerGoal
 
-    control o-left- player
+    control <.left. player
     control *-- controlGoal
     controlGoal <|-- stop
     controlGoal <|-- advance
