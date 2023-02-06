@@ -1,9 +1,18 @@
 
 public class Player {
 
-    public void drive(Train train, int totalWagons, String instruction) {
-        train.howManyWagons(totalWagons);
-        train.actions(instruction);
+    String instruction;
+    
+    public Player(String instruction) {
+        this.instruction = instruction;
+    }
+    
+    public String getInstruction() {
+        return instruction;
     }
 
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+    
 }

@@ -1,27 +1,26 @@
 
 public class Train {
 
-    Control control;
+    TrainGoal trainGoal = new TrainGoal();
     Wagons wagons;
 
-    public Train(Control control, Wagons wagons) {
-        this.control = control;
+    public Train(Wagons wagons) {
         this.wagons = wagons;
     }
 
-    public void actions(String instruction) {
+    public void action(String instruction) {
         switch(instruction) {
             case "Advance":
-                control.advance();
+                trainGoal.advance();
                 break;
             case "Go Back":
-                control.goBack();
+                trainGoal.goBack();
                 break;
             case "Stop":
-                control.stop();
+                trainGoal.stop();
                 break;
             case "Whistle":
-                control.whistle();
+                trainGoal.whistle();
                 break;
         }
     }
@@ -30,20 +29,20 @@ public class Train {
         wagons.addWagons(totalWagons);
     }
 
-    public Control getControl() {
-        return control;
-    }
-
-    public void setControl(Control control) {
-        this.control = control;
-    }
-
     public Wagons getWagons() {
         return wagons;
     }
 
     public void setWagons(Wagons wagons) {
         this.wagons = wagons;
+    }
+
+    public TrainGoal getTrainGoal() {
+        return trainGoal;
+    }
+
+    public void setTrainGoal(TrainGoal trainGoal) {
+        this.trainGoal = trainGoal;
     }
 
 }

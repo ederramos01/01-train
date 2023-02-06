@@ -1,6 +1,4 @@
-
-public class Control {
-
+public class TrainGoal {
     public void advance() {
         System.out.println("The train is moving foward.");
         return;
@@ -19,6 +17,5 @@ public class Control {
     public void whistle() {
         System.out.println("The train whistled");
         return;
-    }
-
+    }   
 }

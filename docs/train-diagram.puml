@@ -4,13 +4,12 @@
     object train
     object trainTracks
     object lineTracks
-    object addTracks
+    object openTracks
     
     object wagons
     object wagonsGoal
     object addWagon
-    object control
-    object controlGoal
+    object trainGoal
     object stop
     object advance
     object goBack
@@ -20,27 +19,25 @@
     object drive
 
     trainGame *-- train
-    trainGame *-- player
     
     train o-- wagons
-    train <.. control
+    train o-- trainGoal
+    train *-- player
     
     trainGame *-- trainTracks
-    addTracks -right-|> trainTracks
+    openTracks -right-|> trainTracks
     trainTracks *-- lineTracks
 
     wagons *-- wagonsGoal
-    addWagon -left-|> wagonsGoal
+    addWagon -up-|> wagonsGoal
 
     player *-- playerGoal
-    drive -right-|> playerGoal
+    drive -up-|> playerGoal
 
-    control <.left. player
-    control *-- controlGoal
-    controlGoal <|-- stop
-    controlGoal <|-- advance
-    controlGoal <|-- goBack
-    controlGoal <|-- whistle
+    trainGoal <|-- stop
+    trainGoal <|-- advance
+    trainGoal <|-- goBack
+    trainGoal <|-- whistle
 
     
 

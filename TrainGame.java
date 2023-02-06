@@ -3,14 +3,12 @@ public class TrainGame {
     Train train;
     Player player;
     int totalWagons;
-    String instruction;
 
-    public TrainGame(TrainTracks trainTracks, Train train, Player player, int totalWagons, String instruction) {
+    public TrainGame(TrainTracks trainTracks, Player player, Train train, int totalWagons) {
         this.trainTracks = trainTracks;
-        this.train = train;
         this.player = player;
+        this.train = train;
         this.totalWagons = totalWagons;
-        this.instruction = instruction;
     }
 
     public void prepareTrain() {
@@ -18,7 +16,8 @@ public class TrainGame {
     }
 
     public void startToPlay() {
-        player.drive(train, totalWagons, instruction);
+        train.howManyWagons(totalWagons);
+        train.action(player.getInstruction());
     }
     
 }
