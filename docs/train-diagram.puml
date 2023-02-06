@@ -19,13 +19,14 @@
     object drive
 
     trainGame *-- train
-    
+    trainGame *-- trainTracks
+    trainGame *-- player
+
     train o-- wagons
     train o-- trainGoal
-    train *-- player
+    train <-- player
     
-    trainGame *-- trainTracks
-    openTracks -right-|> trainTracks
+    openTracks -up-|> trainTracks
     trainTracks *-- lineTracks
 
     wagons *-- wagonsGoal

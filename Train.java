@@ -8,8 +8,8 @@ public class Train {
         this.wagons = wagons;
     }
 
-    public void action(String instruction) {
-        switch(instruction) {
+    public void action(Player player) {
+        switch(player.getInstruction()) {
             case "Advance":
                 trainGoal.advance();
                 break;

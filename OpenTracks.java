@@ -7,7 +7,7 @@ public class OpenTracks extends TrainTracks{
 
     @Override
     public void addTracks() {
-        System.out.println(lineTracks + " lines have been add to the train tracks.");
+        System.out.println("-> " + lineTracks + " lines have been add to the train tracks.");
         
     }
 
