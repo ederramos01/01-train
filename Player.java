@@ -1,8 +1,16 @@
 
-public class Player {
+public abstract class Player {
 
-    String instruction;
-    
+    protected String instruction;
+
+    public Player() {
+        
+    }
+
+    public Player(String instruction) {
+        this.instruction = instruction;
+    }
+
     public String getInstruction() {
         return instruction;
     }
@@ -10,5 +18,5 @@ public class Player {
     public void setInstruction(String instruction) {
         this.instruction = instruction;
     }
-    
+
 }

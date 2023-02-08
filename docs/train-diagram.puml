@@ -5,6 +5,7 @@
     object trainTracks
     object lineTracks
     object openTracks
+    object initialGame
     
     object wagons
     object wagonsGoal
@@ -17,10 +18,15 @@
     object player
     object playerGoal
     object drive
+    object initialGameGoal
+    object showFirstMenu
 
     trainGame *-- train
     trainGame *-- trainTracks
     trainGame *-- player
+    trainGame *-- initialGame
+    initialGame --* initialGameGoal
+    initialGameGoal <-- showFirstMenu
 
     train o-- wagons
     train o-- trainGoal
@@ -39,7 +45,5 @@
     trainGoal <|-- advance
     trainGoal <|-- goBack
     trainGoal <|-- whistle
-
-    
 
 @enduml

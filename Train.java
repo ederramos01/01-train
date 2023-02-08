@@ -26,15 +26,7 @@ public class Train {
     }
 
     public void howManyWagons(int totalWagons) {
-        wagons.addWagons(totalWagons);
-    }
-
-    public Wagons getWagons() {
-        return wagons;
-    }
-
-    public void setWagons(Wagons wagons) {
-        this.wagons = wagons;
+        wagons.setTotalWagons(totalWagons);
     }
 
     public TrainGoal getTrainGoal() {

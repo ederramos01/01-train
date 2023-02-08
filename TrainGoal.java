@@ -4,7 +4,7 @@ public class TrainGoal {
 
     public void advance() {
         kilometer++;
-        System.out.println("-> The train is moving foward "+kilometer+" kilometers.\n");
+        System.out.println("-> The train is moving foward "+kilometer+" kilometers\n");
         return;
     }
 

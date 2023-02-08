@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TrainGame {
@@ -6,6 +7,7 @@ public class TrainGame {
     Train train;
     Player player;
     int totalWagons;
+    int[] menuOption = {2, 3, 4, 5, 9};
 
     public TrainGame(TrainTracks trainTracks, Player player, Train train, int totalWagons) {
         this.trainTracks = trainTracks;
@@ -30,7 +32,11 @@ public class TrainGame {
                 System.out.println("3) Go Back");
                 System.out.println("4) Stop");
                 System.out.println("5) Whistle");
-                option = readNumber.nextInt();
+                if(player.getClass().getName() == "Human") {
+                    option = readNumber.nextInt();
+                } else {
+                    option = menuOption[new Random().nextInt(4+1)];
+                }
                 switch (option) {
                     case 1:
                         System.out.println("1) How many wagons do you want to add?");
@@ -56,7 +62,7 @@ public class TrainGame {
                 }
             }
         } catch (InputMismatchException e) {
-            System.out.println("¡Error!... You should type a number");
+            System.out.println("¡Error!... You should type a number.");
         }
     }
 }
